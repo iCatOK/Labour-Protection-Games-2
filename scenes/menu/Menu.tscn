@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/menu/MenuScene.gd" type="Script" id=1]
+[ext_resource path="res://scripts/menu/ExitButton.gd" type="Script" id=2]
+[ext_resource path="res://scripts/common/ChooseSceneButton.gd" type="Script" id=3]
+[ext_resource path="res://gfx/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 52
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="BackGround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.215686, 0.215686, 0.352941, 1 )
+
+[node name="Content" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Vertical Aligment" type="VBoxContainer" parent="Content"]
+margin_right = 1024.0
+margin_bottom = 600.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Content/Vertical Aligment"]
+margin_top = 177.0
+margin_right = 1024.0
+margin_bottom = 241.0
+custom_fonts/font = SubResource( 1 )
+text = "Охрана труда"
+align = 1
+valign = 1
+
+[node name="Separator" type="MarginContainer" parent="Content/Vertical Aligment"]
+margin_top = 245.0
+margin_right = 1024.0
+margin_bottom = 305.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="StartButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
+margin_top = 309.0
+margin_right = 1024.0
+margin_bottom = 354.0
+alignment = 1
+script = ExtResource( 3 )
+scene_path = "res://scenes/menu/Variant Choosing.tscn"
+
+[node name="Button" type="Button" parent="Content/Vertical Aligment/StartButton"]
+margin_left = 312.0
+margin_right = 712.0
+margin_bottom = 45.0
+grow_horizontal = 2
+rect_min_size = Vector2( 400, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Начать тестирование"
+
+[node name="Separator2" type="MarginContainer" parent="Content/Vertical Aligment"]
+margin_top = 358.0
+margin_right = 1024.0
+margin_bottom = 373.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="ExitButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
+margin_top = 377.0
+margin_right = 1024.0
+margin_bottom = 422.0
+alignment = 1
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="Content/Vertical Aligment/ExitButton"]
+margin_left = 362.0
+margin_right = 662.0
+margin_bottom = 45.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Выход"
+
+[connection signal="pressed" from="Content/Vertical Aligment/StartButton/Button" to="Content/Vertical Aligment/StartButton" method="_on_Change_Scene_Button_pressed"]
+[connection signal="pressed" from="Content/Vertical Aligment/ExitButton/Button" to="Content/Vertical Aligment/ExitButton" method="_on_Exit_Button_pressed"]
