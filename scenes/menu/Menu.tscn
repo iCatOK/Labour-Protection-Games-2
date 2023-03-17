@@ -28,36 +28,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Vertical Aligment" type="VBoxContainer" parent="Content"]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Content/Vertical Aligment"]
-margin_top = 177.0
-margin_right = 1024.0
-margin_bottom = 241.0
+margin_top = 417.0
+margin_right = 1920.0
+margin_bottom = 481.0
 custom_fonts/font = SubResource( 1 )
 text = "Охрана труда"
 align = 1
 valign = 1
 
 [node name="Separator" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 245.0
-margin_right = 1024.0
-margin_bottom = 305.0
+margin_top = 485.0
+margin_right = 1920.0
+margin_bottom = 545.0
 rect_min_size = Vector2( 0, 60 )
 
 [node name="StartButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 309.0
-margin_right = 1024.0
-margin_bottom = 354.0
+margin_top = 549.0
+margin_right = 1920.0
+margin_bottom = 594.0
 alignment = 1
 script = ExtResource( 3 )
 scene_path = "res://scenes/menu/Variant Choosing.tscn"
 
 [node name="Button" type="Button" parent="Content/Vertical Aligment/StartButton"]
-margin_left = 312.0
-margin_right = 712.0
+margin_left = 760.0
+margin_right = 1160.0
 margin_bottom = 45.0
 grow_horizontal = 2
 rect_min_size = Vector2( 400, 0 )
@@ -65,21 +65,21 @@ custom_fonts/font = SubResource( 2 )
 text = "Начать тестирование"
 
 [node name="Separator2" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 358.0
-margin_right = 1024.0
-margin_bottom = 373.0
+margin_top = 598.0
+margin_right = 1920.0
+margin_bottom = 613.0
 rect_min_size = Vector2( 0, 15 )
 
 [node name="ExitButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 377.0
-margin_right = 1024.0
-margin_bottom = 422.0
+margin_top = 617.0
+margin_right = 1920.0
+margin_bottom = 662.0
 alignment = 1
 script = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="Content/Vertical Aligment/ExitButton"]
-margin_left = 362.0
-margin_right = 662.0
+margin_left = 810.0
+margin_right = 1110.0
 margin_bottom = 45.0
 grow_horizontal = 2
 rect_min_size = Vector2( 300, 0 )
