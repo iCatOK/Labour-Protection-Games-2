@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/common/DocumentStepController.gd" type="Script" id=1]
+[ext_resource path="res://scenes/v1_work_on_high/StepOneTutorial.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/common/Hint.gd" type="Script" id=3]
+[ext_resource path="res://gfx/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+extra_spacing_bottom = -5
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 4 )
+
+[node name="DocumentStep" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+document_pages_scene = "res://scenes/v1_work_on_high/DocumentStepVariantOnePages.tscn"
+
+[node name="BackGround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.215686, 0.215686, 0.352941, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 56.0
+margin_top = 48.0
+margin_right = -56.0
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1808.0
+margin_bottom = 1032.0
+size_flags_horizontal = 3
+custom_constants/separation = 15
+
+[node name="ToolBar" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_right = 1808.0
+margin_bottom = 45.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="ShowBriefButton" type="Button" parent="MarginContainer/Rows/ToolBar"]
+margin_left = 589.0
+margin_right = 899.0
+margin_bottom = 45.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 12
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 1 )
+text = "Показать письмо"
+
+[node name="NextButton" type="Button" parent="MarginContainer/Rows/ToolBar"]
+margin_left = 919.0
+margin_right = 1219.0
+margin_bottom = 45.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 12
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 1 )
+text = "Далее"
+
+[node name="Tutorial" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_top = 8.0
+margin_bottom = 8.0
+color = Color( 0, 0, 0, 0.584314 )
+
+[node name="Hint" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="Hint"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Email" type="NinePatchRect" parent="Hint"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Hint/Email"]
+margin_left = 48.0
+margin_top = 56.0
+margin_right = 1800.0
+margin_bottom = 823.0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "От: ПАО НК «СИНТЕЗХИМ»
+
+- Добрый день, необходимо организовать работы по окраски листов стенки 8-го пояса резервуара (отделочные работы на высоте) , на площадке резервуарного парка (1-233) для хранения нефти (РВС-3000). Рабочее место внешняя стенка резервуара.
+
+
+Круглову Виктору Анатольевичу выдать наряд-допуск на проведение данных работ и провести инструктаж.
+Ответственным руководителем назначить Валеева Александра Сергеевича.
+Ответственным исполнителем назначить Колосова Дмитрия Владимировича.
+Бригаду утвердить в качестве 2-х человек Петряева Ивана Васильевича, Вялеченко Семена Сергеевича.
+Работу выполнить с 10.05.2023-14.05.2023 с 11:00-16:00.
+
+Опасные и вредные производственные факторы, которые действуют или могут возникнуть в местах выполнения работ: падение инструментов с высоты, запыленность и загазованность, токсичный порог лакокрасочных материалов, неблагоприятные метеорологические условия, Эмаль ПФ-115, страховочные системы, безвоздушный распылитель, пескоструйное оборудование, системы удержания емкостей и инструментов."
+valign = 1
+autowrap = true
+
+[node name="DocumentStepButton" type="Button" parent="Hint/Email"]
+anchor_left = 0.664
+anchor_top = 0.867
+anchor_right = 0.957
+anchor_bottom = 0.947
+margin_left = 0.0639648
+margin_top = -0.200012
+margin_right = 0.0319824
+margin_bottom = -3.20001
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 12
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 3 )
+text = "Скрыть"
+
+[connection signal="pressed" from="MarginContainer/Rows/ToolBar/ShowBriefButton" to="Hint" method="_on_ShowBriefButton_pressed"]
+[connection signal="pressed" from="Hint/Email/DocumentStepButton" to="Hint" method="_on_DocumentStepButton_pressed"]

@@ -1,0 +1,246 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://scenes/common/ImageCell.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/common/slings.png" type="Texture" id=2]
+[ext_resource path="res://resources/common/safety_belt.jpg" type="Texture" id=3]
+[ext_resource path="res://resources/common/safety_screen.jpg" type="Texture" id=4]
+[ext_resource path="res://resources/common/safety_harness.jpg" type="Texture" id=5]
+[ext_resource path="res://resources/common/pants.jpg" type="Texture" id=6]
+[ext_resource path="res://resources/common/respirator.jpg" type="Texture" id=7]
+[ext_resource path="res://resources/common/knee_pads.jpg" type="Texture" id=8]
+[ext_resource path="res://resources/common/mittens.jpg" type="Texture" id=9]
+[ext_resource path="res://resources/common/earplugs.jpg" type="Texture" id=10]
+[ext_resource path="res://resources/common/boots.jpg" type="Texture" id=11]
+[ext_resource path="res://resources/common/gas_mask.jpg" type="Texture" id=12]
+[ext_resource path="res://resources/common/coat.jpg" type="Texture" id=13]
+[ext_resource path="res://resources/common/gloves.jpg" type="Texture" id=14]
+[ext_resource path="res://resources/common/helmet.jpg" type="Texture" id=15]
+[ext_resource path="res://resources/common/hose_gas_mask.jpg" type="Texture" id=16]
+[ext_resource path="res://resources/common/glasses.jpg" type="Texture" id=17]
+[ext_resource path="res://gfx/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://scenes/common/ProtectorInfo.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scripts/common/ProtectionStep.gd" type="Script" id=20]
+
+[sub_resource type="DynamicFont" id=3]
+size = 38
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.164706, 0.164706, 0.262745, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.164706, 0.164706, 0.262745, 1 )
+
+[node name="ProtectionStep" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 20 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.215686, 0.215686, 0.352941, 1 )
+
+[node name="ProtectorsHeader" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 72.0
+margin_right = 825.0
+margin_bottom = 119.0
+rect_pivot_offset = Vector2( 392, 96 )
+custom_fonts/font = SubResource( 3 )
+text = "Доступные СИЗ"
+valign = 1
+
+[node name="AvailableProtectorsList" type="ScrollContainer" parent="ProtectorsHeader"]
+margin_top = 80.0
+margin_right = 708.0
+margin_bottom = 696.0
+custom_styles/bg = SubResource( 1 )
+
+[node name="GridContainer" type="GridContainer" parent="ProtectorsHeader/AvailableProtectorsList"]
+margin_right = 660.0
+margin_bottom = 660.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 4
+
+[node name="ImageCell" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 150.0
+margin_bottom = 150.0
+image = ExtResource( 11 )
+clickable = true
+index = 1
+
+[node name="ImageCell2" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 0.0
+margin_right = 320.0
+margin_bottom = 150.0
+image = ExtResource( 13 )
+clickable = true
+index = 2
+
+[node name="ImageCell3" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 0.0
+margin_right = 490.0
+margin_bottom = 150.0
+image = ExtResource( 10 )
+clickable = true
+index = 3
+
+[node name="ImageCell4" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 510.0
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 150.0
+image = ExtResource( 12 )
+clickable = true
+index = 4
+
+[node name="ImageCell5" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 170.0
+margin_right = 150.0
+margin_bottom = 320.0
+image = ExtResource( 17 )
+clickable = true
+index = 5
+
+[node name="ImageCell6" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 170.0
+margin_right = 320.0
+margin_bottom = 320.0
+image = ExtResource( 14 )
+clickable = true
+index = 6
+
+[node name="ImageCell7" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 170.0
+margin_right = 490.0
+margin_bottom = 320.0
+image = ExtResource( 15 )
+clickable = true
+index = 7
+
+[node name="ImageCell8" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 510.0
+margin_top = 170.0
+margin_right = 660.0
+margin_bottom = 320.0
+image = ExtResource( 16 )
+clickable = true
+index = 8
+
+[node name="ImageCell9" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 340.0
+margin_right = 150.0
+margin_bottom = 490.0
+image = ExtResource( 8 )
+clickable = true
+index = 9
+
+[node name="ImageCell10" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 340.0
+margin_right = 320.0
+margin_bottom = 490.0
+image = ExtResource( 9 )
+clickable = true
+index = 10
+
+[node name="ImageCell11" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 340.0
+margin_right = 490.0
+margin_bottom = 490.0
+image = ExtResource( 6 )
+clickable = true
+index = 11
+
+[node name="ImageCell12" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 510.0
+margin_top = 340.0
+margin_right = 660.0
+margin_bottom = 490.0
+image = ExtResource( 7 )
+clickable = true
+index = 12
+
+[node name="ImageCell13" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 510.0
+margin_right = 150.0
+margin_bottom = 660.0
+image = ExtResource( 3 )
+clickable = true
+index = 13
+
+[node name="ImageCell14" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 510.0
+margin_right = 320.0
+margin_bottom = 660.0
+image = ExtResource( 5 )
+clickable = true
+index = 14
+
+[node name="ImageCell15" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 510.0
+margin_right = 490.0
+margin_bottom = 660.0
+image = ExtResource( 4 )
+clickable = true
+index = 15
+
+[node name="ImageCell16" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 510.0
+margin_top = 510.0
+margin_right = 660.0
+margin_bottom = 660.0
+image = ExtResource( 2 )
+clickable = true
+index = 16
+
+[node name="ChoosedProtectorsHeader" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 112.0
+margin_top = -280.0
+margin_right = 446.0
+margin_bottom = -233.0
+rect_pivot_offset = Vector2( 392, 96 )
+custom_fonts/font = SubResource( 3 )
+text = "Выбранные СИЗ"
+valign = 1
+
+[node name="ChoosedProtectorsList" type="ScrollContainer" parent="ChoosedProtectorsHeader"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 17.0
+margin_right = 704.0
+margin_bottom = 201.0
+custom_styles/bg = SubResource( 2 )
+
+[node name="GridContainer" type="HBoxContainer" parent="ChoosedProtectorsHeader/ChoosedProtectorsList"]
+custom_constants/separation = 21
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProtectorInfo" parent="." instance=ExtResource( 19 )]
+margin_left = 1016.0
+margin_top = 72.0
+margin_right = 1832.0
+margin_bottom = 760.0

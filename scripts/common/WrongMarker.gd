@@ -14,7 +14,7 @@ func _ready():
 
 
 func _on_marker_gui_event(event: InputEvent):
-	if event.is_action_pressed("ui_mark"):
+	if event.is_action_pressed("ui_click"):
 		change_marked_state(not marked)
 		emit_signal("marked_event", {"index": index, "marked": marked})
 
