@@ -1,7 +1,8 @@
 extends Node
 
-var player_score: Dictionary = {}
+var config: Dictionary = read_json_file("gfx/configs/config_1.json")
 
+var player_score: Dictionary = {}
 var valid_score: Dictionary = {
 		"document_step": 5,
 		"protection_step": 3,

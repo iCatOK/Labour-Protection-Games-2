@@ -6,9 +6,8 @@ const FAILURE_MESSAGE: String = 'Вы отметили не те ошибки! �
 
 export(Array, NodePath) var wrong_markers
 export var result_dialog_path: NodePath
-export var valid_indexes_array_name: String #индексы_ответов_тест_1
+export var valid_indexes_array_name: String = "индексы_ответов_тест_1"
 
-var config: Dictionary = Global.read_json_file("gfx/configs/config_1.json")
 var player_wrong_marker_indexes: Array = []
 var valid_wrong_marker_indexes: Array
 var last_result: bool = false
@@ -19,7 +18,7 @@ signal marker_state_change(marked)
 
 
 func _ready():
-	valid_wrong_marker_indexes = config[valid_indexes_array_name]
+	valid_wrong_marker_indexes = Global.config[valid_indexes_array_name]
 	valid_wrong_marker_indexes.sort()
 	print(valid_wrong_marker_indexes)
 	result_dialog = get_node(result_dialog_path)
