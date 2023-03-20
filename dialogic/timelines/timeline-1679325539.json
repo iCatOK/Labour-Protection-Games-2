@@ -30,7 +30,7 @@
 			"background-music": "play",
 			"event_id": "dialogic_031",
 			"event_name": "BackgroundMusic",
-			"fade_length": 1,
+			"fade_length": 0.1,
 			"file": "",
 			"volume": 0
 		},
@@ -45,7 +45,7 @@
 			"background-music": "play",
 			"event_id": "dialogic_031",
 			"event_name": "BackgroundMusic",
-			"fade_length": 1,
+			"fade_length": 1.5,
 			"file": "res://resources/music/fire begins.mp3",
 			"volume": 0
 		},
@@ -168,7 +168,7 @@
 			"background-music": "play",
 			"event_id": "dialogic_031",
 			"event_name": "BackgroundMusic",
-			"fade_length": 1,
+			"fade_length": 0,
 			"file": "",
 			"volume": 0
 		},
