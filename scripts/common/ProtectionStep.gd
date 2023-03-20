@@ -6,10 +6,10 @@ var step_player_indexes = []
 var cell_node = preload("res://scenes/common/ImageCell.tscn")
 onready var cell_container = $ProtectorsHeader/AvailableProtectorsList/GridContainer
 onready var choosen_container = $ChoosedProtectorsHeader/ChoosedProtectorsList/GridContainer
+onready var cell_info = $ProtectorInfo
 
 func _ready():
 	print("[protection step] Valid Second Step Indexes: %s" % [step_valid_indexes])
-	var cell_container = $ProtectorsHeader/AvailableProtectorsList/GridContainer
 	for child in cell_container.get_children():
 		var c: ImageCell = (child as ImageCell)
 		c.connect_signals(self)
@@ -29,9 +29,30 @@ func _create_cell(cell):
 		step_player_indexes.erase(new_cell.index)
 	print("[protection step] Current player indexes: %s" % [step_player_indexes])
 	cell.queue_free()
+	
+func _set_clicked_item_info(cell):
+	cell_info.set_info(cell)
 
-func _delete_from_choosen(cell):
-	for child in cell_container.get_children():
-		if cell.index == child.index:
-			var c = (child as Node)
-			c.free()
+
+func _on_NextButton_pressed():
+	var correct_answers_count: int = 0
+	var wrong_answers_count: int = 0
+	var step_player_indexes_size = step_player_indexes.size()
+	var step_valid_indexes_size = step_valid_indexes.size()
+	var min_size = min(step_player_indexes_size, step_valid_indexes_size)
+	print(min_size)
+	for i in step_player_indexes_size:
+		var player_index = step_player_indexes[i]
+		if not (player_index in step_valid_indexes):
+			print("[checking] %s - wrong" % player_index)
+			wrong_answers_count += 1
+		else:
+			print("[checking] %s - correct" % player_index)
+			correct_answers_count += 1
+	print("[checking] Player choosed correctly %s protectors out of %s" % [correct_answers_count, step_valid_indexes_size])
+	Global.set_step_score("protection_step", correct_answers_count, wrong_answers_count)
+	get_tree().change_scene("res://scenes/common/Results.tscn")
+
+
+func _on_ShowBriefButton_pressed():
+	$Hint.show()

@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gfx/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/common/ImageCell.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/common/ProtectorInfo.gd" type="Script" id=3]
+[ext_resource path="res://resources/common/boots.jpg" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=3]
 size = 38
@@ -15,6 +17,7 @@ font_data = ExtResource( 1 )
 margin_left = -3.0
 margin_right = 939.0
 margin_bottom = 600.0
+script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -28,15 +31,16 @@ anchor_bottom = 1.0
 [node name="ProtectorHeader" type="Label" parent="Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -84.0
+margin_left = -356.0
 margin_top = 16.0
-margin_right = 86.0
+margin_right = 358.0
 margin_bottom = 63.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 3 )
 text = "Ботинки"
 align = 1
 valign = 1
+clip_text = true
 
 [node name="ImageCell" parent="Control" instance=ExtResource( 2 )]
 anchor_left = 0.5
@@ -46,8 +50,9 @@ anchor_bottom = 0.013
 margin_left = -155.53
 margin_top = 66.2
 margin_right = 160.47
-margin_bottom = 370.2
+margin_bottom = 382.2
 size_flags_horizontal = 4
+image = ExtResource( 4 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
 anchor_left = 0.014
@@ -70,10 +75,10 @@ custom_constants/separation = 20
 
 [node name="Description" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
 margin_right = 936.0
-margin_bottom = 105.0
+margin_bottom = 69.0
 size_flags_horizontal = 5
 custom_fonts/font = SubResource( 4 )
-text = "Ботинки fsdf jsf sdjfsdjf sljfsd jfslf jsldjf lsjfilsdj fds fdf sdfsf sdf sf sd fsdf sd sdf sdf sdf sf sfs fsd fsd s fs sdsd sd fssdf sd f s fsdf sdfsdf sdf sdf s"
+text = "Специальные твёрдые ботинки, обладают противоскользящим покрытием."
 align = 1
 valign = 1
 autowrap = true

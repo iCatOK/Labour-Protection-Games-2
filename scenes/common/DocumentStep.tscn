@@ -23,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 document_pages_scene = "res://scenes/v1_work_on_high/DocumentStepVariantOnePages.tscn"
+protection_step_path = "res://scenes/v1_work_on_high/ProtectionStepVariantOne.tscn"
 
 [node name="BackGround" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -130,4 +131,5 @@ custom_fonts/font = SubResource( 3 )
 text = "Скрыть"
 
 [connection signal="pressed" from="MarginContainer/Rows/ToolBar/ShowBriefButton" to="Hint" method="_on_ShowBriefButton_pressed"]
+[connection signal="pressed" from="MarginContainer/Rows/ToolBar/NextButton" to="." method="_on_NextButton_pressed"]
 [connection signal="pressed" from="Hint/Email/DocumentStepButton" to="Hint" method="_on_DocumentStepButton_pressed"]

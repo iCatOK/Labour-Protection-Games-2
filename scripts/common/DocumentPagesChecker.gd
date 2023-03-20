@@ -84,18 +84,16 @@ func _on_ResultDialog_confirmed():
 
 func _on_NextButton_pressed():
 	var correct_answers_count: int = 0
+	var wrong_answers_count: int = 0
 	var player_markers_size = player_wrong_marker_indexes.size()
 	var valid_markers_size = valid_wrong_marker_indexes.size()
-	var min_size = min(player_markers_size, valid_markers_size)
-	print(min_size)
-	for i in min_size:
+	for i in player_markers_size:
 		var player_index = player_wrong_marker_indexes[i]
-		var valid_index =  valid_wrong_marker_indexes[i]
 		if not (player_index in valid_wrong_marker_indexes):
 			print("[checking] %s - wrong" % player_index)
-			continue
+			wrong_answers_count += 1
 		else:
 			print("[checking] %s - correct" % player_index)
 			correct_answers_count += 1
 	print("[checking] Player marked correctly %s mistakes out of %s" % [correct_answers_count, valid_markers_size])
-	Global.set_step_score("document_step", correct_answers_count)
+	Global.set_step_score("document_step", correct_answers_count, wrong_answers_count)

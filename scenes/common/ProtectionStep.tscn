@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/common/ImageCell.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/common/slings.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://gfx/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://scenes/common/ProtectorInfo.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scripts/common/ProtectionStep.gd" type="Script" id=20]
+[ext_resource path="res://scenes/v1_work_on_high/ProtectionStepTutorial.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scripts/common/Hint.gd" type="Script" id=22]
 
 [sub_resource type="DynamicFont" id=3]
 size = 38
@@ -30,6 +32,19 @@ bg_color = Color( 0.164706, 0.164706, 0.262745, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.164706, 0.164706, 0.262745, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+extra_spacing_bottom = -5
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 18 )
 
 [node name="ProtectionStep" type="Control"]
 anchor_right = 1.0
@@ -72,6 +87,8 @@ margin_bottom = 150.0
 image = ExtResource( 11 )
 clickable = true
 index = 1
+item_name = "Ботинки"
+item_description = "Специальные твёрдые ботинки, обладают противоскользящим покрытием."
 
 [node name="ImageCell2" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 170.0
@@ -81,6 +98,8 @@ margin_bottom = 150.0
 image = ExtResource( 13 )
 clickable = true
 index = 2
+item_name = "Куртка"
+item_description = "Легкая свободная куртка с защитным покрытием."
 
 [node name="ImageCell3" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 340.0
@@ -90,6 +109,8 @@ margin_bottom = 150.0
 image = ExtResource( 10 )
 clickable = true
 index = 3
+item_name = "Беруши"
+item_description = "Защищают уши от сильного шума."
 
 [node name="ImageCell4" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 510.0
@@ -99,6 +120,8 @@ margin_bottom = 150.0
 image = ExtResource( 12 )
 clickable = true
 index = 4
+item_name = "Противогаз"
+item_description = "Защита органов дыхания и глаз, комплексная защита. Катриджи с фильтрами не дают вдохнуть ядовитые газы."
 
 [node name="ImageCell5" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
@@ -108,6 +131,8 @@ margin_bottom = 320.0
 image = ExtResource( 17 )
 clickable = true
 index = 5
+item_name = "Очки"
+item_description = "Защита органов зрения. Могут иметь фильтры для защиты от определенных видов излучнения."
 
 [node name="ImageCell6" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 170.0
@@ -117,6 +142,8 @@ margin_bottom = 320.0
 image = ExtResource( 14 )
 clickable = true
 index = 6
+item_name = "Перчатки"
+item_description = "Защита кожи рук."
 
 [node name="ImageCell7" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 340.0
@@ -126,6 +153,8 @@ margin_bottom = 320.0
 image = ExtResource( 15 )
 clickable = true
 index = 7
+item_name = "Каска"
+item_description = "Защита головы от падения различных предметов на голову."
 
 [node name="ImageCell8" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 510.0
@@ -135,6 +164,8 @@ margin_bottom = 320.0
 image = ExtResource( 16 )
 clickable = true
 index = 8
+item_name = "Шланговый противогаз"
+item_description = "Защита органов дыхания и глаз. Может поставляться вместе с балонами с кислородом."
 
 [node name="ImageCell9" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
@@ -144,6 +175,8 @@ margin_bottom = 490.0
 image = ExtResource( 8 )
 clickable = true
 index = 9
+item_name = "Наколенники"
+item_description = "Защита колен. "
 
 [node name="ImageCell10" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 170.0
@@ -153,6 +186,8 @@ margin_bottom = 490.0
 image = ExtResource( 9 )
 clickable = true
 index = 10
+item_name = "Краги (руковицы)"
+item_description = "Защита кожи рук и запястья. Обладают большой защитой, чем перчатки, но частично сковывают движения пальцев."
 
 [node name="ImageCell11" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 340.0
@@ -162,6 +197,8 @@ margin_bottom = 490.0
 image = ExtResource( 6 )
 clickable = true
 index = 11
+item_name = "Штаны"
+item_description = "Защита ног. Легкие и не стесняют движение. Непродуваемые."
 
 [node name="ImageCell12" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 510.0
@@ -171,6 +208,8 @@ margin_bottom = 490.0
 image = ExtResource( 7 )
 clickable = true
 index = 12
+item_name = "Респиратор"
+item_description = "Защита органов дыхания. Менее эффективен, чем противогаз."
 
 [node name="ImageCell13" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
@@ -180,6 +219,8 @@ margin_bottom = 660.0
 image = ExtResource( 3 )
 clickable = true
 index = 13
+item_name = "Страховочный пояс"
+item_description = "Одевается рабочим на страховочную привязь. Необходим для безопасной работы на высоте."
 
 [node name="ImageCell14" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 170.0
@@ -189,6 +230,8 @@ margin_bottom = 660.0
 image = ExtResource( 5 )
 clickable = true
 index = 14
+item_name = "Страховочная привязь"
+item_description = "Одевается рабочим, крепится к страховочному поясу."
 
 [node name="ImageCell15" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 340.0
@@ -198,6 +241,8 @@ margin_bottom = 660.0
 image = ExtResource( 4 )
 clickable = true
 index = 15
+item_name = "Защитный экран"
+item_description = "Защита органов зрения. Также может применяться для защиты органов дыхания от направленного воздействия среды."
 
 [node name="ImageCell16" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" instance=ExtResource( 1 )]
 margin_left = 510.0
@@ -207,6 +252,8 @@ margin_bottom = 660.0
 image = ExtResource( 2 )
 clickable = true
 index = 16
+item_name = "Страховочные страпы"
+item_description = "Крепится на страховочный пояс с одной стороны и на опору с другой. Необходим для безопасной работы на высоте."
 
 [node name="ChoosedProtectorsHeader" type="Label" parent="."]
 anchor_top = 1.0
@@ -224,7 +271,7 @@ valign = 1
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = 17.0
-margin_right = 704.0
+margin_right = 1704.0
 margin_bottom = 201.0
 custom_styles/bg = SubResource( 2 )
 
@@ -240,7 +287,99 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="ProtectorInfo" parent="." instance=ExtResource( 19 )]
-margin_left = 1016.0
-margin_top = 72.0
-margin_right = 1832.0
-margin_bottom = 760.0
+margin_left = 1000.0
+margin_top = 152.0
+margin_right = 1816.0
+margin_bottom = 765.0
+
+[node name="Toolbar" type="HBoxContainer" parent="."]
+margin_left = 1032.0
+margin_top = 24.0
+margin_right = 1844.0
+margin_bottom = 168.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="ShowBriefButton" type="Button" parent="Toolbar"]
+margin_left = 43.0
+margin_top = 42.0
+margin_right = 353.0
+margin_bottom = 102.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 60 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+text = "Показать письмо"
+
+[node name="NextButton" type="Button" parent="Toolbar"]
+margin_left = 464.0
+margin_top = 42.0
+margin_right = 764.0
+margin_bottom = 102.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 60 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+text = "Далее"
+
+[node name="Hint" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 22 )
+
+[node name="ColorRect" type="ColorRect" parent="Hint"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Email" type="NinePatchRect" parent="Hint"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Hint/Email"]
+margin_left = 48.0
+margin_top = 56.0
+margin_right = 1800.0
+margin_bottom = 823.0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "От: ПАО НК «СИНТЕЗХИМ»
+
+- Добрый день, необходимо организовать работы по окраски листов стенки 8-го пояса резервуара (отделочные работы на высоте) , на площадке резервуарного парка (1-233) для хранения нефти (РВС-3000). Рабочее место внешняя стенка резервуара.
+
+
+Круглову Виктору Анатольевичу выдать наряд-допуск на проведение данных работ и провести инструктаж.
+Ответственным руководителем назначить Валеева Александра Сергеевича.
+Ответственным исполнителем назначить Колосова Дмитрия Владимировича.
+Бригаду утвердить в качестве 2-х человек Петряева Ивана Васильевича, Вялеченко Семена Сергеевича.
+Работу выполнить с 10.05.2023-14.05.2023 с 11:00-16:00.
+
+Опасные и вредные производственные факторы, которые действуют или могут возникнуть в местах выполнения работ: падение инструментов с высоты, запыленность и загазованность, токсичный порог лакокрасочных материалов, неблагоприятные метеорологические условия, Эмаль ПФ-115, страховочные системы, безвоздушный распылитель, пескоструйное оборудование, системы удержания емкостей и инструментов."
+valign = 1
+autowrap = true
+
+[node name="DocumentStepButton" type="Button" parent="Hint/Email"]
+anchor_left = 0.664
+anchor_top = 0.867
+anchor_right = 0.957
+anchor_bottom = 0.947
+margin_left = 0.0639648
+margin_top = -0.200012
+margin_right = 0.0319824
+margin_bottom = -3.20001
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 12
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 6 )
+text = "Скрыть"
+
+[node name="Tutorial" parent="." instance=ExtResource( 21 )]
+visible = false
+
+[connection signal="pressed" from="Toolbar/ShowBriefButton" to="." method="_on_ShowBriefButton_pressed"]
+[connection signal="pressed" from="Toolbar/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="Hint/Email/DocumentStepButton" to="Hint" method="_on_DocumentStepButton_pressed"]

@@ -1,21 +1,24 @@
 extends Node
 
-var config: Dictionary = read_json_file("gfx/configs/config_1.json")
+var config: Dictionary = read_json_file("res://gfx/configs/config_1.json")
 
 var player_score: Dictionary = {}
 var valid_score: Dictionary = {
-		"document_step": 5,
-		"protection_step": 3,
-		"sign_step": 4,
+		"document_step": config["индексы_ответов_тест_1"].size(),
+		"protection_step": config["second_step_valid_indexes"].size(),
+		"sign_step": 2,
 		"emergency_step": 2
 	}
 
 func _ready():
 	pass
 	
-func set_step_score(step_name: String, score: int):
-	player_score[step_name] = score
-	print("[global] Step %s complete, player_score: %s" % [step_name, score])
+func set_step_score(step_name: String, score: int, wrong_score: int):
+	var step_valid_score = valid_score[step_name]
+	var passed = "Пройдено" if (score >= step_valid_score) else "Не пройдено"
+	var player_calulated_score = max(0, score - wrong_score)
+	player_score[step_name] = [player_calulated_score, step_valid_score, passed]
+	print("[global] Step %s complete, player_score: %s" % [step_name, player_calulated_score])
 	print(player_score)
 	
 func read_json_file(filename):

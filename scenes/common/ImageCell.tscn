@@ -1,20 +1,40 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/common/ImageCell.gd" type="Script" id=1]
+[ext_resource path="res://resources/common/boots.jpg" type="Texture" id=2]
 
-[node name="ImageCell" type="ColorRect"]
+[node name="ImageCell" type="Control"]
 margin_left = 408.0
 margin_top = 204.0
 margin_right = 608.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 150, 150 )
 script = ExtResource( 1 )
-bg_color = Color( 1, 1, 1, 1 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Frame" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0.894118, 0.0784314, 0.0784314, 1 )
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="Image" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 
-[connection signal="gui_input" from="TextureRect" to="." method="_on_TextureRect_gui_input"]
+[connection signal="gui_input" from="Image" to="." method="_on_TextureRect_gui_input"]
+[connection signal="mouse_entered" from="Image" to="." method="_on_Image_mouse_entered"]
+[connection signal="mouse_exited" from="Image" to="." method="_on_Image_mouse_exited"]
