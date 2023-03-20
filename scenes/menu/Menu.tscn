@@ -33,24 +33,24 @@ margin_bottom = 1080.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Content/Vertical Aligment"]
-margin_top = 417.0
+margin_top = 383.0
 margin_right = 1920.0
-margin_bottom = 481.0
+margin_bottom = 447.0
 custom_fonts/font = SubResource( 1 )
 text = "Охрана труда"
 align = 1
 valign = 1
 
 [node name="Separator" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 485.0
+margin_top = 451.0
 margin_right = 1920.0
-margin_bottom = 545.0
+margin_bottom = 511.0
 rect_min_size = Vector2( 0, 60 )
 
 [node name="StartButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 549.0
+margin_top = 515.0
 margin_right = 1920.0
-margin_bottom = 594.0
+margin_bottom = 560.0
 alignment = 1
 script = ExtResource( 3 )
 scene_path = "res://scenes/menu/Variant Choosing.tscn"
@@ -65,15 +65,15 @@ custom_fonts/font = SubResource( 2 )
 text = "Начать тестирование"
 
 [node name="Separator2" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 598.0
+margin_top = 564.0
 margin_right = 1920.0
-margin_bottom = 613.0
+margin_bottom = 579.0
 rect_min_size = Vector2( 0, 15 )
 
 [node name="ExitButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 617.0
+margin_top = 583.0
 margin_right = 1920.0
-margin_bottom = 662.0
+margin_bottom = 628.0
 alignment = 1
 script = ExtResource( 2 )
 
@@ -86,5 +86,29 @@ rect_min_size = Vector2( 300, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Выход"
 
+[node name="Separator3" type="MarginContainer" parent="Content/Vertical Aligment"]
+margin_top = 632.0
+margin_right = 1920.0
+margin_bottom = 647.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="DialogButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
+margin_top = 651.0
+margin_right = 1920.0
+margin_bottom = 696.0
+alignment = 1
+script = ExtResource( 3 )
+scene_path = "res://scenes/common/EmergencyStep.tscn"
+
+[node name="Button" type="Button" parent="Content/Vertical Aligment/DialogButton"]
+margin_left = 730.0
+margin_right = 1189.0
+margin_bottom = 45.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Опасная ситуация: пожар"
+
 [connection signal="pressed" from="Content/Vertical Aligment/StartButton/Button" to="Content/Vertical Aligment/StartButton" method="_on_Change_Scene_Button_pressed"]
 [connection signal="pressed" from="Content/Vertical Aligment/ExitButton/Button" to="Content/Vertical Aligment/ExitButton" method="_on_Exit_Button_pressed"]
+[connection signal="pressed" from="Content/Vertical Aligment/DialogButton/Button" to="Content/Vertical Aligment/DialogButton" method="_on_Change_Scene_Button_pressed"]

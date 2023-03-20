@@ -1,0 +1,216 @@
+{
+	"events": [
+		{
+			"background": "res://resources/bg/fire/office.jpg",
+			"event_id": "dialogic_021"
+		},
+		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1,
+			"file": "res://resources/music/office_ambience.wav",
+			"volume": -10
+		},
+		{
+			"character": "character-1679326700.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "О нет, посмотри на время!"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Что-то я засиделся в офисе, не заметил, как прошло время за собранием о проекте. Пора собираться домой."
+		},
+		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1,
+			"file": "",
+			"volume": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Как только я собрал свой рюкзак и направился к выходу, в нашу переговорку вбежала моя коллега Маша. Вид у неё был испуганный."
+		},
+		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1,
+			"file": "res://resources/music/fire begins.mp3",
+			"volume": 0
+		},
+		{
+			"animation": "bouncing_in.gd",
+			"animation_length": 0,
+			"animation_wait": false,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1679323041.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Cry",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": true,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1679323041.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ребята, мы горим! Спасайся, кто может!"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Каждого из присутствующих этот выкрик поверг в шок. Надо решить, что мы будем делать. Такс, что там у нас было в технике безопасности?"
+		},
+		{
+			"choice": "Спросить, где пожар",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"definition": "1679329105-483",
+			"event_id": "dialogic_014",
+			"operation": "+",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"character": "character-1679326700.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Маша, успокойся и ответь: в каком кабинете сейчас пожар?"
+		},
+		{
+			"character": "character-1679323041.json",
+			"event_id": "dialogic_001",
+			"portrait": "Scared",
+			"text": "Ух..."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Маша попыталась успокоится и восстановить дахание."
+		},
+		{
+			"character": "character-1679323041.json",
+			"event_id": "dialogic_001",
+			"portrait": "Cry",
+			"text": "Он на втором этаже, в серверной!"
+		},
+		{
+			"character": "character-1679323041.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "Я вызову пожарных, я знаю как это делается!"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Конец, на пока что, но вы на верном пути. Баллов: [Good Points] "
+		},
+		{
+			"choice": "Пойти домой",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1679323041.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1,
+			"file": "",
+			"volume": 0
+		},
+		{
+			"background": "res://resources/bg/fire/after_fire.jpg",
+			"event_id": "dialogic_021"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "С ничего не выражающим лицом, я пошёл домой, как и планировал. "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "На следующий день в новостях сообщили, что сгорело офисной здание, погибло два человека."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " Завтра едем на похороны."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Конец игры: Концовка безразличия. Баллов: [Good Points] "
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"change_scene": "res://scenes/menu/Menu.tscn",
+			"event_id": "dialogic_041"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1679325539.json",
+		"name": "Into: Fire"
+	}
+}

@@ -1,0 +1,57 @@
+{
+	"color": "#ffffffff",
+	"description": "Друг по несчастью, тоже оказалась в задымлённом помещении (тестовый сценарий пожара в офисе)",
+	"display_name": "Мария",
+	"display_name_bool": true,
+	"id": "character-1679323041.json",
+	"mirror_portraits": false,
+	"name": "Maria",
+	"nickname": "Маша",
+	"nickname_bool": true,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://resources/characters/sl/sl_normal_wet_rain.png"
+		},
+		{
+			"name": "Angry",
+			"path": "res://resources/characters/sl/sl_angry_wet_rain.png"
+		},
+		{
+			"name": "Cry",
+			"path": "res://resources/characters/sl/sl_cry_wet_rain.png"
+		},
+		{
+			"name": "Laugh",
+			"path": "res://resources/characters/sl/sl_laugh_wet_rain.png"
+		},
+		{
+			"name": "Sad",
+			"path": "res://resources/characters/sl/sl_sad_wet_rain.png"
+		},
+		{
+			"name": "Scared",
+			"path": "res://resources/characters/sl/sl_scared_wet_rain.png"
+		},
+		{
+			"name": "Serious",
+			"path": "res://resources/characters/sl/sl_serious_wet_rain.png"
+		},
+		{
+			"name": "Smile",
+			"path": "res://resources/characters/sl/sl_smile_wet_rain.png"
+		},
+		{
+			"name": "Surprise",
+			"path": "res://resources/characters/sl/sl_surprise_wet_rain.png"
+		},
+		{
+			"name": "Tender",
+			"path": "res://resources/characters/sl/sl_tender_wet_rain.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}
