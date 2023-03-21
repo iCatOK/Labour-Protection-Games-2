@@ -74,7 +74,7 @@
 			"character": "character-1679323041.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ребята, мы горим! Спасайся, кто может!"
+			"text": "Ребята, [shake rate=5 level=10][color=#FF0000]мы горим![/color][/shake] Спасайся, кто может!"
 		},
 		{
 			"character": "",
