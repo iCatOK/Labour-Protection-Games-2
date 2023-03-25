@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/common/ChooseSceneButton.gd" type="Script" id=1]
-[ext_resource path="res://gfx/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://gfx/fonts/timesnewromanpsmt.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/menu/VariantChoosingScene.gd" type="Script" id=3]
+[ext_resource path="res://resources/bg/menu/menu.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 52
+size = 55
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 32
+size = 35
 font_data = ExtResource( 2 )
 
 [node name="Variant Choosing" type="Control"]
@@ -17,71 +18,75 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
-[node name="BackGround" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.215686, 0.215686, 0.352941, 1 )
+texture = ExtResource( 4 )
+expand = true
 
 [node name="Content" type="MarginContainer" parent="."]
-anchor_right = 1.0
+anchor_top = 0.146
+anchor_right = 0.984
 anchor_bottom = 1.0
-margin_right = -0.000549316
+margin_top = 0.319992
+margin_right = 0.719971
 
 [node name="Vertical Aligment" type="VBoxContainer" parent="Content"]
-margin_right = 1919.0
-margin_bottom = 1080.0
+margin_right = 1890.0
+margin_bottom = 922.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Content/Vertical Aligment"]
-margin_top = 432.0
-margin_right = 1919.0
-margin_bottom = 496.0
+margin_top = 353.0
+margin_right = 1890.0
+margin_bottom = 415.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Выбор вида работ"
 align = 1
 valign = 1
 
 [node name="Separator" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 500.0
-margin_right = 1919.0
-margin_bottom = 530.0
+margin_top = 419.0
+margin_right = 1890.0
+margin_bottom = 449.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="WorkOnHighButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 534.0
-margin_right = 1919.0
-margin_bottom = 579.0
+margin_top = 453.0
+margin_right = 1890.0
+margin_bottom = 499.0
 alignment = 1
 script = ExtResource( 1 )
 scene_path = "res://scenes/v1_work_on_high/BriefVariantOne.tscn"
 
 [node name="Button" type="Button" parent="Content/Vertical Aligment/WorkOnHighButton"]
-margin_left = 759.0
-margin_right = 1159.0
-margin_bottom = 45.0
+margin_left = 745.0
+margin_right = 1145.0
+margin_bottom = 46.0
 grow_horizontal = 2
 rect_min_size = Vector2( 400, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Работа на высоте"
 
 [node name="Separator2" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 583.0
-margin_right = 1919.0
-margin_bottom = 598.0
+margin_top = 503.0
+margin_right = 1890.0
+margin_bottom = 518.0
 rect_min_size = Vector2( 0, 15 )
 
 [node name="BackButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 602.0
-margin_right = 1919.0
-margin_bottom = 647.0
+margin_top = 522.0
+margin_right = 1890.0
+margin_bottom = 568.0
 alignment = 1
 script = ExtResource( 1 )
 scene_path = "res://scenes/menu/Menu.tscn"
 
 [node name="Button" type="Button" parent="Content/Vertical Aligment/BackButton"]
-margin_left = 759.0
-margin_right = 1159.0
-margin_bottom = 45.0
+margin_left = 745.0
+margin_right = 1145.0
+margin_bottom = 46.0
 grow_horizontal = 2
 rect_min_size = Vector2( 400, 0 )
 custom_fonts/font = SubResource( 2 )
