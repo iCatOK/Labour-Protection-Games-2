@@ -22,9 +22,11 @@ func _ready():
 func get_image_texture():
 	return $Image.texture
 	
-func connect_signals(target):
-	connect("on_image_cell_click", target, "_create_cell")
-	connect("on_image_cell_info_click", target, "_set_clicked_item_info")
+func connect_cell_click_signal(target, method_name):
+	connect("on_image_cell_click", target, method_name)
+
+func connect_cell_info_click_signal(target, method_name):
+	connect("on_image_cell_info_click", target, method_name)
 
 func init_cell(cell):
 	item_name = cell.item_name

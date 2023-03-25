@@ -3,12 +3,27 @@ extends Node
 var config: Dictionary = read_json_file("res://gfx/configs/config_1.json")
 
 var player_score: Dictionary = {}
+
 var valid_score: Dictionary = {
 		"document_step": config["индексы_ответов_тест_1"].size(),
 		"protection_step": config["second_step_valid_indexes"].size(),
-		"sign_step": 2,
-		"emergency_step": 2
+		"sign_step": config["sign_step_valid_indexes"].size(),
+		"emergency_step": 1,
+		"test_step": config["test_questions"].size()
 	}
+	
+var step_name_map: Dictionary = {
+	"document_step": "Наряд допуск",
+	"protection_step": "Выбор СИЗ",
+	"sign_step": "Выбор знаков опасности",
+	"emergency_step": "Опасная ситуация",
+	"test_step": "Тестирование"
+}
+
+static func delete_children(node):
+	for n in node.get_children():
+		node.remove_child(n)
+		n.queue_free()
 
 func _ready():
 	pass

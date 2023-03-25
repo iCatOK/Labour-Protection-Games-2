@@ -1,5 +1,7 @@
 extends Control
 
+export var sign_step_path: String
+
 var step_valid_indexes = Global.config["second_step_valid_indexes"]
 var step_player_indexes = []
 
@@ -11,14 +13,14 @@ onready var cell_info = $ProtectorInfo
 func _ready():
 	print("[protection step] Valid Second Step Indexes: %s" % [step_valid_indexes])
 	for child in cell_container.get_children():
-		var c: ImageCell = (child as ImageCell)
-		c.connect_signals(self)
-		
+		var cell: ImageCell = (child as ImageCell)
+		_connect_cell_signals(cell)
+
 func _create_cell(cell):
 	print("[protection step] choosing cell")
 	var new_cell = cell_node.instance()
 	new_cell.init_cell(cell)
-	new_cell.connect_signals(self)
+	_connect_cell_signals(new_cell)
 	if not cell.choosen:
 		choosen_container.add_child(new_cell)
 		choosen_container.move_child(new_cell, 0)
@@ -29,10 +31,6 @@ func _create_cell(cell):
 		step_player_indexes.erase(new_cell.index)
 	print("[protection step] Current player indexes: %s" % [step_player_indexes])
 	cell.queue_free()
-	
-func _set_clicked_item_info(cell):
-	cell_info.set_info(cell)
-
 
 func _on_NextButton_pressed():
 	var correct_answers_count: int = 0
@@ -51,8 +49,16 @@ func _on_NextButton_pressed():
 			correct_answers_count += 1
 	print("[checking] Player choosed correctly %s protectors out of %s" % [correct_answers_count, step_valid_indexes_size])
 	Global.set_step_score("protection_step", correct_answers_count, wrong_answers_count)
-	get_tree().change_scene("res://scenes/common/Results.tscn")
-
+	get_tree().change_scene(sign_step_path)
 
 func _on_ShowBriefButton_pressed():
 	$Hint.show()
+	
+func _set_clicked_item_info(cell):
+	cell_info.set_info(cell)
+
+func _connect_cell_signals(cell: ImageCell):
+	cell.connect_cell_click_signal(self, '_create_cell')
+	cell.connect_cell_info_click_signal(self, '_set_clicked_item_info')
+
+

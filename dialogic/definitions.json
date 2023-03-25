@@ -8,6 +8,12 @@
 			"name": "Good Points",
 			"type": 0,
 			"value": "0"
+		},
+		{
+			"id": "1679738442-648",
+			"name": "Bad Points",
+			"type": 0,
+			"value": "0"
 		}
 	]
 }

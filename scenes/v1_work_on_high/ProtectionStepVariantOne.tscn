@@ -3,6 +3,7 @@
 [ext_resource path="res://scenes/common/ProtectionStep.tscn" type="PackedScene" id=1]
 
 [node name="ProtectionStep" instance=ExtResource( 1 )]
+sign_step_path = "res://scenes/v1_work_on_high/SafetySignsStepVariantOne.tscn"
 
 [node name="ImageCell" parent="ProtectorsHeader/AvailableProtectorsList/GridContainer" index="0"]
 index = 4

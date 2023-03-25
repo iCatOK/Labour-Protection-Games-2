@@ -1,0 +1,356 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://scenes/common/ImageCell.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/common/sign_dont_drink.jpeg" type="Texture" id=2]
+[ext_resource path="res://resources/common/sign_dont_pikup.jpeg" type="Texture" id=3]
+[ext_resource path="res://resources/common/sign_safety_screen.jpeg" type="Texture" id=4]
+[ext_resource path="res://resources/common/sign_radiation.jpeg" type="Texture" id=5]
+[ext_resource path="res://resources/common/sign_safety_suit.png" type="Texture" id=6]
+[ext_resource path="res://resources/common/sign_dont_elevate.jpeg" type="Texture" id=7]
+[ext_resource path="res://resources/common/sign_gears.jpeg" type="Texture" id=8]
+[ext_resource path="res://scenes/v1_work_on_high/SignStepTutorial.tscn" type="PackedScene" id=9]
+[ext_resource path="res://resources/common/sign_gas_aware_works.png" type="Texture" id=10]
+[ext_resource path="res://resources/common/sign_crags.png" type="Texture" id=11]
+[ext_resource path="res://resources/common/sign_fire_works.png" type="Texture" id=12]
+[ext_resource path="res://resources/common/sign_poisoness_gas.png" type="Texture" id=13]
+[ext_resource path="res://resources/common/sign_gas_mask.jpeg" type="Texture" id=14]
+[ext_resource path="res://resources/common/sign_falling_things.jpeg" type="Texture" id=15]
+[ext_resource path="res://resources/common/sign_dont_touch.jpeg" type="Texture" id=17]
+[ext_resource path="res://gfx/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://scripts/common/SignsStep.gd" type="Script" id=19]
+[ext_resource path="res://scripts/common/Hint.gd" type="Script" id=22]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.164706, 0.164706, 0.262745, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 38
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.164706, 0.164706, 0.262745, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+extra_spacing_bottom = -5
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 18 )
+
+[node name="SafetySignsStep" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 19 )
+emergency_step_scene_path = "res://scenes/v1_work_on_high/EmergencyStepVariantOne.tscn"
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.215686, 0.215686, 0.352941, 1 )
+
+[node name="ChoosedSigns" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -852.0
+margin_top = -290.0
+margin_right = 852.0
+margin_bottom = -42.0
+
+[node name="ChoosedSignsList" type="ScrollContainer" parent="ChoosedSigns"]
+margin_top = 64.0
+margin_right = 1704.0
+margin_bottom = 248.0
+custom_styles/bg = SubResource( 2 )
+
+[node name="GridContainer" type="HBoxContainer" parent="ChoosedSigns/ChoosedSignsList"]
+custom_constants/separation = 21
+
+[node name="ChoosedSignsHeader" type="Label" parent="ChoosedSigns"]
+margin_right = 334.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 392, 96 )
+custom_fonts/font = SubResource( 3 )
+text = "Выбранные СИЗ"
+valign = 1
+
+[node name="SafetySigns" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -595.0
+margin_top = -484.0
+margin_right = 612.0
+margin_bottom = 213.0
+
+[node name="SignsHeader" type="Label" parent="SafetySigns"]
+margin_top = 1.0
+margin_right = 440.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 392, 96 )
+custom_fonts/font = SubResource( 3 )
+text = "Знаки безопасности"
+valign = 1
+
+[node name="Toolbar" type="HBoxContainer" parent="SafetySigns"]
+margin_left = 577.0
+margin_right = 1207.0
+margin_bottom = 60.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="ShowBriefButton" type="Button" parent="SafetySigns/Toolbar"]
+margin_right = 310.0
+margin_bottom = 60.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 60 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+text = "Показать письмо"
+
+[node name="NextButton" type="Button" parent="SafetySigns/Toolbar"]
+margin_left = 330.0
+margin_right = 630.0
+margin_bottom = 60.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 60 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+text = "Далее"
+
+[node name="AvailableSignsList" type="ScrollContainer" parent="SafetySigns"]
+margin_top = 81.0
+margin_right = 1207.0
+margin_bottom = 697.0
+custom_styles/bg = SubResource( 1 )
+
+[node name="GridContainer" type="GridContainer" parent="SafetySigns/AvailableSignsList"]
+margin_right = 1170.0
+margin_bottom = 320.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 7
+
+[node name="ImageCell" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 150.0
+margin_bottom = 150.0
+image = ExtResource( 11 )
+clickable = true
+index = 1
+item_name = "Ботинки"
+item_description = "Специальные твёрдые ботинки, обладают противоскользящим покрытием."
+
+[node name="ImageCell2" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 0.0
+margin_right = 320.0
+margin_bottom = 150.0
+image = ExtResource( 13 )
+clickable = true
+index = 2
+item_name = "Куртка"
+item_description = "Легкая свободная куртка с защитным покрытием."
+
+[node name="ImageCell3" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 0.0
+margin_right = 490.0
+margin_bottom = 150.0
+image = ExtResource( 10 )
+clickable = true
+index = 3
+item_name = "Беруши"
+item_description = "Защищают уши от сильного шума."
+
+[node name="ImageCell4" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 510.0
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 150.0
+image = ExtResource( 12 )
+clickable = true
+index = 4
+item_name = "Противогаз"
+item_description = "Защита органов дыхания и глаз, комплексная защита. Катриджи с фильтрами не дают вдохнуть ядовитые газы."
+
+[node name="ImageCell5" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 680.0
+margin_top = 0.0
+margin_right = 830.0
+margin_bottom = 150.0
+image = ExtResource( 14 )
+clickable = true
+index = 5
+item_name = "Очки"
+item_description = "Защита органов зрения. Могут иметь фильтры для защиты от определенных видов излучнения."
+
+[node name="ImageCell6" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 850.0
+margin_top = 0.0
+margin_right = 1000.0
+margin_bottom = 150.0
+image = ExtResource( 15 )
+clickable = true
+index = 6
+item_name = "Перчатки"
+item_description = "Защита кожи рук."
+
+[node name="ImageCell7" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 1020.0
+margin_top = 0.0
+margin_right = 1170.0
+margin_bottom = 150.0
+image = ExtResource( 17 )
+clickable = true
+index = 7
+item_name = "Каска"
+item_description = "Защита головы от падения различных предметов на голову."
+
+[node name="ImageCell8" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 170.0
+margin_right = 150.0
+margin_bottom = 320.0
+image = ExtResource( 2 )
+clickable = true
+index = 8
+item_name = "Шланговый противогаз"
+item_description = "Защита органов дыхания и глаз. Может поставляться вместе с балонами с кислородом."
+
+[node name="ImageCell9" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 170.0
+margin_right = 320.0
+margin_bottom = 320.0
+image = ExtResource( 7 )
+clickable = true
+index = 9
+item_name = "Наколенники"
+item_description = "Защита колен. "
+
+[node name="ImageCell10" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 170.0
+margin_right = 490.0
+margin_bottom = 320.0
+image = ExtResource( 3 )
+clickable = true
+index = 10
+item_name = "Краги (руковицы)"
+item_description = "Защита кожи рук и запястья. Обладают большой защитой, чем перчатки, но частично сковывают движения пальцев."
+
+[node name="ImageCell11" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 510.0
+margin_top = 170.0
+margin_right = 660.0
+margin_bottom = 320.0
+image = ExtResource( 6 )
+clickable = true
+index = 11
+item_name = "Штаны"
+item_description = "Защита ног. Легкие и не стесняют движение. Непродуваемые."
+
+[node name="ImageCell12" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 680.0
+margin_top = 170.0
+margin_right = 830.0
+margin_bottom = 320.0
+image = ExtResource( 4 )
+clickable = true
+index = 12
+item_name = "Респиратор"
+item_description = "Защита органов дыхания. Менее эффективен, чем противогаз."
+
+[node name="ImageCell13" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 850.0
+margin_top = 170.0
+margin_right = 1000.0
+margin_bottom = 320.0
+image = ExtResource( 5 )
+clickable = true
+index = 13
+item_name = "Страховочный пояс"
+item_description = "Одевается рабочим на страховочную привязь. Необходим для безопасной работы на высоте."
+
+[node name="ImageCell14" parent="SafetySigns/AvailableSignsList/GridContainer" instance=ExtResource( 1 )]
+margin_left = 1020.0
+margin_top = 170.0
+margin_right = 1170.0
+margin_bottom = 320.0
+image = ExtResource( 8 )
+clickable = true
+index = 14
+item_name = "Страховочный пояс"
+item_description = "Одевается рабочим на страховочную привязь. Необходим для безопасной работы на высоте."
+
+[node name="Hint" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 22 )
+
+[node name="ColorRect" type="ColorRect" parent="Hint"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Email" type="NinePatchRect" parent="Hint"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Hint/Email"]
+margin_left = 48.0
+margin_top = 56.0
+margin_right = 1800.0
+margin_bottom = 823.0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "От: ПАО НК «СИНТЕЗХИМ»
+
+- Добрый день, необходимо организовать работы по окраски листов стенки 8-го пояса резервуара (отделочные работы на высоте) , на площадке резервуарного парка (1-233) для хранения нефти (РВС-3000). Рабочее место внешняя стенка резервуара.
+
+
+Круглову Виктору Анатольевичу выдать наряд-допуск на проведение данных работ и провести инструктаж.
+Ответственным руководителем назначить Валеева Александра Сергеевича.
+Ответственным исполнителем назначить Колосова Дмитрия Владимировича.
+Бригаду утвердить в качестве 2-х человек Петряева Ивана Васильевича, Вялеченко Семена Сергеевича.
+Работу выполнить с 10.05.2023-14.05.2023 с 11:00-16:00.
+
+Опасные и вредные производственные факторы, которые действуют или могут возникнуть в местах выполнения работ: падение инструментов с высоты, запыленность и загазованность, токсичный порог лакокрасочных материалов, неблагоприятные метеорологические условия, Эмаль ПФ-115, страховочные системы, безвоздушный распылитель, пескоструйное оборудование, системы удержания емкостей и инструментов."
+valign = 1
+autowrap = true
+
+[node name="DocumentStepButton" type="Button" parent="Hint/Email"]
+anchor_left = 0.664
+anchor_top = 0.867
+anchor_right = 0.957
+anchor_bottom = 0.947
+margin_left = 0.0639648
+margin_top = -0.200012
+margin_right = 0.0319824
+margin_bottom = -3.20001
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 12
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 6 )
+text = "Скрыть"
+
+[node name="Tutorial" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[connection signal="pressed" from="SafetySigns/Toolbar/ShowBriefButton" to="." method="_on_ShowBriefButton_pressed"]
+[connection signal="pressed" from="SafetySigns/Toolbar/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="Hint/Email/DocumentStepButton" to="Hint" method="_on_DocumentStepButton_pressed"]

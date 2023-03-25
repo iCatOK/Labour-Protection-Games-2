@@ -144,6 +144,14 @@
 			"value": ""
 		},
 		{
+			"definition": "1679738442-648",
+			"event_id": "dialogic_014",
+			"operation": "+",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
 			"animation": "[Default]",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
@@ -204,7 +212,11 @@
 			"event_id": "dialogic_013"
 		},
 		{
-			"change_scene": "res://scenes/menu/Menu.tscn",
+			"emit_signal": "set_results",
+			"event_id": "dialogic_040"
+		},
+		{
+			"change_scene": "res://scenes/v1_work_on_high/TestStepVariantOne.tscn",
 			"event_id": "dialogic_041"
 		}
 	],
