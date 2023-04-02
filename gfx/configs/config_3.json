@@ -1,0 +1,55 @@
+{
+  "scenario_name": "Конфигурация 3 - Огонь",
+  "first_step_valid_indexes": [1, 6, 10, 12, 15, 22, 27],
+  "second_step_valid_indexes": [1, 2, 4, 5, 7, 9, 10, 11, 15],
+  "sign_step_valid_indexes": [1, 4, 6, 7, 12],
+  "test_questions": [
+    {
+      "text": "Какое минимальное количество лестниц или трапов для подъема и спуска людей устанавливается на лесах длиной менее 40 м?",
+      "index": 1,
+      "answers": [
+        {
+          "index": 1,
+          "text": "2",
+          "is_correct": true
+        },
+        {
+          "index": 2,
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "index": 3,
+          "text": "4",
+          "is_correct": false
+        },
+        {
+          "index": 3,
+          "text": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько будет 2 + 2?",
+      "index": 2,
+      "answers": [
+        {
+          "index": 1,
+          "text": "5",
+          "is_correct": false
+        },
+        {
+          "index": 2,
+          "text": "4",
+          "is_correct": true
+        },
+        {
+          "index": 3,
+          "text": "Лично как то по..",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

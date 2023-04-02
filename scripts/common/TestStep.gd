@@ -4,13 +4,15 @@ onready var answers_container = $TestElements/AnswersContainer
 var answer_button_node = preload("res://scenes/common/AnswerButton.tscn")
 var last_choosen_button: AnswerButton
 
-var questions = Global.config.test_questions
-var question_count = questions.size()
+var questions: Array
+var question_count: int = 0
 var current_question_index = 0
 
 var right_answers: int = 0
 
 func _ready():
+	questions = Global.config.test_questions
+	question_count = questions.size()
 	_set_question()
 		
 func _on_answer(choosen_button: AnswerButton):
@@ -42,6 +44,9 @@ func _set_question():
 		answers_container.add_child(new_answer_node)
 
 func _on_NextButton_pressed():
+	if not last_choosen_button:
+		return
+	
 	if last_choosen_button.is_correct:
 		right_answers += 1
 		

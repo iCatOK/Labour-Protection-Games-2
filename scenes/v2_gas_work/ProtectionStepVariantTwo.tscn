@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/common/ProtectionStep.tscn" type="PackedScene" id=1]
+
+[node name="ProtectionStep" instance=ExtResource( 1 )]
+sign_step_path = "res://scenes/v2_gas_work/SafetySignsStepVariantTwo.tscn"

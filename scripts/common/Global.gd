@@ -1,16 +1,10 @@
 extends Node
 
-var config: Dictionary = read_json_file("res://gfx/configs/config_1.json")
+var config: Dictionary = {} # read_json_file("res://gfx/configs/config_1.json")
 
 var player_score: Dictionary = {}
 
-var valid_score: Dictionary = {
-		"document_step": config["индексы_ответов_тест_1"].size(),
-		"protection_step": config["second_step_valid_indexes"].size(),
-		"sign_step": config["sign_step_valid_indexes"].size(),
-		"emergency_step": 1,
-		"test_step": config["test_questions"].size()
-	}
+var valid_score: Dictionary = {}
 	
 var step_name_map: Dictionary = {
 	"document_step": "Наряд допуск",
@@ -26,7 +20,8 @@ static func delete_children(node):
 		n.queue_free()
 
 func _ready():
-	pass
+	# default init
+	init_config("res://gfx/configs/config_1.json")
 	
 func set_step_score(step_name: String, score: int, wrong_score: int):
 	var step_valid_score = valid_score[step_name]
@@ -43,3 +38,13 @@ func read_json_file(filename):
 	var json_data = parse_json(text)
 	file.close()
 	return json_data
+
+func init_config(path: String):
+	config = read_json_file(path)
+	valid_score = {
+		"document_step": config["first_step_valid_indexes"].size(),
+		"protection_step": config["second_step_valid_indexes"].size(),
+		"sign_step": config["sign_step_valid_indexes"].size(),
+		"emergency_step": 1,
+		"test_step": config["test_questions"].size()
+	}

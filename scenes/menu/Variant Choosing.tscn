@@ -37,9 +37,9 @@ margin_bottom = 922.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Content/Vertical Aligment"]
-margin_top = 353.0
+margin_top = 284.0
 margin_right = 1890.0
-margin_bottom = 415.0
+margin_bottom = 346.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Выбор вида работ"
@@ -47,18 +47,19 @@ align = 1
 valign = 1
 
 [node name="Separator" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 419.0
+margin_top = 350.0
 margin_right = 1890.0
-margin_bottom = 449.0
+margin_bottom = 380.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="WorkOnHighButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 453.0
+margin_top = 384.0
 margin_right = 1890.0
-margin_bottom = 499.0
+margin_bottom = 430.0
 alignment = 1
 script = ExtResource( 1 )
 scene_path = "res://scenes/v1_work_on_high/BriefVariantOne.tscn"
+json_config_path = "res://gfx/configs/config_1.json"
 
 [node name="Button" type="Button" parent="Content/Vertical Aligment/WorkOnHighButton"]
 margin_left = 745.0
@@ -70,15 +71,63 @@ custom_fonts/font = SubResource( 2 )
 text = "Работа на высоте"
 
 [node name="Separator2" type="MarginContainer" parent="Content/Vertical Aligment"]
+margin_top = 434.0
+margin_right = 1890.0
+margin_bottom = 449.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="GasWorkButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
+margin_top = 453.0
+margin_right = 1890.0
+margin_bottom = 499.0
+alignment = 1
+script = ExtResource( 1 )
+scene_path = "res://scenes/v2_gas_work/BriefVariantTwo.tscn"
+json_config_path = "res://gfx/configs/config_2.json"
+
+[node name="Button" type="Button" parent="Content/Vertical Aligment/GasWorkButton"]
+margin_left = 745.0
+margin_right = 1145.0
+margin_bottom = 46.0
+grow_horizontal = 2
+rect_min_size = Vector2( 400, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Газоопасные работы"
+
+[node name="Separator3" type="MarginContainer" parent="Content/Vertical Aligment"]
 margin_top = 503.0
 margin_right = 1890.0
 margin_bottom = 518.0
 rect_min_size = Vector2( 0, 15 )
 
-[node name="BackButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
+[node name="FireWorkButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
 margin_top = 522.0
 margin_right = 1890.0
 margin_bottom = 568.0
+alignment = 1
+script = ExtResource( 1 )
+scene_path = "res://scenes/v3_fire_work/BriefVariantThree.tscn"
+json_config_path = "res://gfx/configs/config_3.json"
+
+[node name="Button" type="Button" parent="Content/Vertical Aligment/FireWorkButton"]
+margin_left = 745.0
+margin_right = 1145.0
+margin_bottom = 46.0
+grow_horizontal = 2
+rect_min_size = Vector2( 400, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Огнеопасные работы"
+
+[node name="Separator4" type="MarginContainer" parent="Content/Vertical Aligment"]
+margin_top = 572.0
+margin_right = 1890.0
+margin_bottom = 587.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="BackButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
+margin_top = 591.0
+margin_right = 1890.0
+margin_bottom = 637.0
 alignment = 1
 script = ExtResource( 1 )
 scene_path = "res://scenes/menu/Menu.tscn"
@@ -93,4 +142,6 @@ custom_fonts/font = SubResource( 2 )
 text = "Назад"
 
 [connection signal="pressed" from="Content/Vertical Aligment/WorkOnHighButton/Button" to="Content/Vertical Aligment/WorkOnHighButton" method="_on_Change_Scene_Button_pressed"]
+[connection signal="pressed" from="Content/Vertical Aligment/GasWorkButton/Button" to="Content/Vertical Aligment/GasWorkButton" method="_on_Change_Scene_Button_pressed"]
+[connection signal="pressed" from="Content/Vertical Aligment/FireWorkButton/Button" to="Content/Vertical Aligment/FireWorkButton" method="_on_Change_Scene_Button_pressed"]
 [connection signal="pressed" from="Content/Vertical Aligment/BackButton/Button" to="Content/Vertical Aligment/BackButton" method="_on_Change_Scene_Button_pressed"]

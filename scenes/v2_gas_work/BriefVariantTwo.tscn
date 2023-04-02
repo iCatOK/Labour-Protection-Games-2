@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/common/Brief.tscn" type="PackedScene" id=1]
+
+[node name="Brief" instance=ExtResource( 1 )]
+brief_text = "От: ПАО НК «СИНТЕЗХИМ»
+
+Тут вводная для газоопасных работ"
+document_step_scene = "res://scenes/v2_gas_work/DocumentStepVariantTwo.tscn"

@@ -2,7 +2,7 @@ extends Control
 
 export var emergency_step_scene_path: String
 
-var step_valid_indexes = Global.config["sign_step_valid_indexes"]
+var step_valid_indexes = []
 var step_player_indexes = []
 
 var cell_node = preload("res://scenes/common/ImageCell.tscn")
@@ -10,6 +10,7 @@ onready var cell_container = $SafetySigns/AvailableSignsList/GridContainer
 onready var choosen_container = $ChoosedSigns/ChoosedSignsList/GridContainer
 
 func _ready():
+	step_valid_indexes = Global.config["sign_step_valid_indexes"]
 	print("[sign step] Valid Sign Step Indexes: %s" % [step_valid_indexes])
 	for child in cell_container.get_children():
 		var cell: ImageCell = (child as ImageCell)

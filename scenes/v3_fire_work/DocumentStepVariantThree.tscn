@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/common/DocumentStep.tscn" type="PackedScene" id=1]
+
+[node name="DocumentStep" instance=ExtResource( 1 )]
+document_pages_scene = "res://scenes/v3_fire_work/DocumentStepVariantThreePages.tscn"
+protection_step_path = "res://scenes/v3_fire_work/ProtectionStepVariantThree.tscn"

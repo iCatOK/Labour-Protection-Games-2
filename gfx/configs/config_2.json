@@ -1,0 +1,55 @@
+{
+  "scenario_name": "Конфигурация 2 - Газ",
+  "first_step_valid_indexes": [2, 4, 5, 16, 21, 26, 27, 32, 33, 38, 39, 43],
+  "second_step_valid_indexes": [1, 2, 3, 5, 7, 8, 9, 11],
+  "sign_step_valid_indexes": [1, 2, 3, 5, 6, 7],
+  "test_questions": [
+    {
+      "text": "Какое минимальное количество лестниц или трапов для подъема и спуска людей устанавливается на лесах длиной менее 40 м?",
+      "index": 1,
+      "answers": [
+        {
+          "index": 1,
+          "text": "2",
+          "is_correct": true
+        },
+        {
+          "index": 2,
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "index": 3,
+          "text": "4",
+          "is_correct": false
+        },
+        {
+          "index": 3,
+          "text": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько будет 2 + 2?",
+      "index": 2,
+      "answers": [
+        {
+          "index": 1,
+          "text": "5",
+          "is_correct": false
+        },
+        {
+          "index": 2,
+          "text": "4",
+          "is_correct": true
+        },
+        {
+          "index": 3,
+          "text": "Лично как то по..",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@ extends Control
 
 export var sign_step_path: String
 
-var step_valid_indexes = Global.config["second_step_valid_indexes"]
+var step_valid_indexes = []
 var step_player_indexes = []
 
 var cell_node = preload("res://scenes/common/ImageCell.tscn")
@@ -11,6 +11,7 @@ onready var choosen_container = $ChoosedProtectorsHeader/ChoosedProtectorsList/G
 onready var cell_info = $ProtectorInfo
 
 func _ready():
+	step_valid_indexes = Global.config["second_step_valid_indexes"]
 	print("[protection step] Valid Second Step Indexes: %s" % [step_valid_indexes])
 	for child in cell_container.get_children():
 		var cell: ImageCell = (child as ImageCell)
