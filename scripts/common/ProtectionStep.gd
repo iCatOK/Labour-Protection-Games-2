@@ -16,6 +16,7 @@ func _ready():
 	for child in cell_container.get_children():
 		var cell: ImageCell = (child as ImageCell)
 		_connect_cell_signals(cell)
+ Global.add_dialog(self, "/protection_step")
 
 func _create_cell(cell):
 	print("[protection step] choosing cell")

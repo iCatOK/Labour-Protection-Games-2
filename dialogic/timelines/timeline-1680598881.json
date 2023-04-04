@@ -1,0 +1,36 @@
+{
+	"events": [
+		{
+			"background": "res://resources/bg/timelines/intros/v3_intro.jpg",
+			"event_id": "dialogic_021",
+			"fade_duration": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Я работаю сварщиком уже более 20 лет, и не думаю, что мне надоест заниматься этим до конца моей жизни.  "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Есть что-то удовлетворяющее в работе с металлом, резке, формовке, соединении отдельных деталей воедино. "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "В этой работе есть нечто творческое, но вместо кистей или музыкальных инструментов ты работаешь огнём и сталью."
+		},
+		{
+			"change_timeline": "timeline-1680598902.json",
+			"event_id": "dialogic_020"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1680598881.json",
+		"name": "intro_v3"
+	}
+}

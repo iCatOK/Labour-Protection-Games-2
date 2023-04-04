@@ -43,10 +43,26 @@
 		},
 		"Timelines": {
 			"files": [
-				"timeline-1679325539.json"
+				"timeline-1679325539.json",
+				"timeline-1680598909.json",
+				"timeline-1680598916.json"
 			],
 			"folders": {
+				"brief": {
+					"files": [
+						"timeline-1680598871.json",
+						"timeline-1680598876.json",
+						"timeline-1680598881.json",
+						"timeline-1680598902.json"
+					],
+					"folders": {
 
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				}
 			},
 			"metadata": {
 				"color": null,

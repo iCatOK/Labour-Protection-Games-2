@@ -1,0 +1,36 @@
+{
+	"events": [
+		{
+			"background": "res://resources/bg/timelines/intros/v2_intro.jpg",
+			"event_id": "dialogic_021",
+			"fade_duration": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Я работаю газовщиком уже большую часть своей жизни. Это не самая легкая работа, зато одна из самых оплачиваемых."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Мне пришлось изучить  все тонкости и опасности работы с газом, как устанавливать и ремонтировать газовые трубы, приборы и оборудование. "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Мы, как специалисты высшей категории, ответственны за безопасность и качеств газоснабжения."
+		},
+		{
+			"change_timeline": "timeline-1680598902.json",
+			"event_id": "dialogic_020"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1680598876.json",
+		"name": "intro_v2"
+	}
+}

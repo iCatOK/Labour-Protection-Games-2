@@ -5,6 +5,7 @@ export var document_step_scene: String
 export var hint_mode: bool
 
 func _ready():
+	Global.add_dialog(self, Global.config.intro_timeline)
 	$Email/Label.text = brief_text
 	if hint_mode:
 		$Email/DocumentStepButton.text = "Скрыть"

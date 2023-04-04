@@ -15,6 +15,7 @@ func _ready():
 	for child in cell_container.get_children():
 		var cell: ImageCell = (child as ImageCell)
 		_connect_cell_signals(cell)
+	Global.add_dialog(self, "/signs_step")
 
 func _create_cell(cell):
 	print("[sign step] choosing cell")

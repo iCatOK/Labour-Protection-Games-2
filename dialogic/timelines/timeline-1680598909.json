@@ -1,0 +1,30 @@
+{
+	"events": [
+		{
+			"background": "res://resources/bg/timelines/intros/protection_step_intro.jpg",
+			"event_id": "dialogic_021",
+			"fade_duration": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Отлично,, с наряд допуском разобрались."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Теперь надо взять необходимую экипировку. Так, что нам понадобится?"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1680598909.json",
+		"name": "protection_step"
+	}
+}

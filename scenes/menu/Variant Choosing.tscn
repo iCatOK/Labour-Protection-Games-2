@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/common/ChooseSceneButton.gd" type="Script" id=1]
 [ext_resource path="res://gfx/fonts/timesnewromanpsmt.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/menu/VariantChoosingScene.gd" type="Script" id=3]
-[ext_resource path="res://resources/bg/menu/menu.png" type="Texture" id=4]
+[ext_resource path="res://resources/bg/menu/the menu 2.jpg" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 55
@@ -21,6 +21,8 @@ script = ExtResource( 3 )
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -56.0
+margin_bottom = 392.0
 texture = ExtResource( 4 )
 expand = true
 
@@ -28,8 +30,9 @@ expand = true
 anchor_top = 0.146
 anchor_right = 0.984
 anchor_bottom = 1.0
-margin_top = 0.319992
+margin_top = -54.68
 margin_right = 0.719971
+margin_bottom = -55.0
 
 [node name="Vertical Aligment" type="VBoxContainer" parent="Content"]
 margin_right = 1890.0

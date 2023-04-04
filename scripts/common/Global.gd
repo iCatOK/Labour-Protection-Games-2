@@ -5,6 +5,8 @@ var config: Dictionary = {} # read_json_file("res://gfx/configs/config_1.json")
 var player_score: Dictionary = {}
 
 var valid_score: Dictionary = {}
+
+var is_visual_novel: bool = false
 	
 var step_name_map: Dictionary = {
 	"document_step": "Наряд допуск",
@@ -48,3 +50,8 @@ func init_config(path: String):
 		"emergency_step": 1,
 		"test_step": config["test_questions"].size()
 	}
+	
+func add_dialog(sender, timeline):
+	if Global.is_visual_novel:
+		var dialog = Dialogic.start(timeline)
+		sender.add_child(dialog)

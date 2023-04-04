@@ -4,14 +4,14 @@
 [ext_resource path="res://scripts/menu/ExitButton.gd" type="Script" id=2]
 [ext_resource path="res://scripts/common/ChooseSceneButton.gd" type="Script" id=3]
 [ext_resource path="res://gfx/fonts/timesnewromanpsmt.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://resources/bg/menu/menu.png" type="Texture" id=5]
+[ext_resource path="res://resources/bg/menu/the menu 2.jpg" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 55
+size = 59
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 35
+size = 40
 font_data = ExtResource( 4 )
 
 [node name="Menu" type="Control"]
@@ -22,6 +22,8 @@ script = ExtResource( 1 )
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -56.0
+margin_bottom = 392.0
 texture = ExtResource( 5 )
 expand = true
 
@@ -29,19 +31,20 @@ expand = true
 anchor_top = 0.185
 anchor_right = 1.0
 anchor_bottom = 0.991
-margin_top = 0.199997
-margin_right = -22.0
-margin_bottom = -0.280029
+margin_left = -6.0
+margin_top = -78.8
+margin_right = -16.0
+margin_bottom = -79.28
 
 [node name="Vertical Aligment" type="VBoxContainer" parent="Content"]
-margin_right = 1898.0
+margin_right = 1910.0
 margin_bottom = 870.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Content/Vertical Aligment"]
-margin_top = 310.0
-margin_right = 1898.0
-margin_bottom = 372.0
+margin_top = 268.0
+margin_right = 1910.0
+margin_bottom = 334.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Охрана труда"
@@ -49,57 +52,71 @@ align = 1
 valign = 1
 
 [node name="Separator" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 376.0
-margin_right = 1898.0
-margin_bottom = 436.0
+margin_top = 338.0
+margin_right = 1910.0
+margin_bottom = 398.0
 rect_min_size = Vector2( 0, 60 )
 
 [node name="StartButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 440.0
-margin_right = 1898.0
-margin_bottom = 486.0
+margin_top = 402.0
+margin_right = 1910.0
+margin_bottom = 453.0
 alignment = 1
 script = ExtResource( 3 )
 scene_path = "res://scenes/menu/Variant Choosing.tscn"
 
 [node name="Button" type="Button" parent="Content/Vertical Aligment/StartButton"]
-margin_left = 749.0
-margin_right = 1149.0
-margin_bottom = 46.0
+margin_left = 755.0
+margin_right = 1155.0
+margin_bottom = 51.0
 grow_horizontal = 2
 rect_min_size = Vector2( 400, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Начать тестирование"
 
 [node name="Separator2" type="MarginContainer" parent="Content/Vertical Aligment"]
-margin_top = 490.0
-margin_right = 1898.0
-margin_bottom = 505.0
+margin_top = 457.0
+margin_right = 1910.0
+margin_bottom = 472.0
 rect_min_size = Vector2( 0, 15 )
 
 [node name="ExitButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 509.0
-margin_right = 1898.0
-margin_bottom = 555.0
+margin_top = 476.0
+margin_right = 1910.0
+margin_bottom = 527.0
 alignment = 1
 script = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="Content/Vertical Aligment/ExitButton"]
-margin_left = 799.0
-margin_right = 1099.0
-margin_bottom = 46.0
+margin_left = 805.0
+margin_right = 1105.0
+margin_bottom = 51.0
 grow_horizontal = 2
 rect_min_size = Vector2( 300, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Выход"
 
-[node name="DialogButton" type="HBoxContainer" parent="Content/Vertical Aligment"]
-margin_top = 559.0
-margin_right = 1898.0
-margin_bottom = 559.0
+[node name="Separator3" type="MarginContainer" parent="Content/Vertical Aligment"]
+margin_top = 531.0
+margin_right = 1910.0
+margin_bottom = 546.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="VisualNovelMode" type="HBoxContainer" parent="Content/Vertical Aligment"]
+margin_top = 550.0
+margin_right = 1910.0
+margin_bottom = 601.0
 alignment = 1
-script = ExtResource( 3 )
-scene_path = "res://scenes/common/EmergencyStep.tscn"
+
+[node name="Button" type="Button" parent="Content/Vertical Aligment/VisualNovelMode"]
+margin_left = 805.0
+margin_right = 1105.0
+margin_bottom = 51.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Режим: тест"
 
 [connection signal="pressed" from="Content/Vertical Aligment/StartButton/Button" to="Content/Vertical Aligment/StartButton" method="_on_Change_Scene_Button_pressed"]
 [connection signal="pressed" from="Content/Vertical Aligment/ExitButton/Button" to="Content/Vertical Aligment/ExitButton" method="_on_Exit_Button_pressed"]
+[connection signal="pressed" from="Content/Vertical Aligment/VisualNovelMode/Button" to="." method="_on_Visual_Novel_Mode_Button_pressed"]

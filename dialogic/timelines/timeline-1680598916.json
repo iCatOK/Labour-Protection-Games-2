@@ -1,0 +1,30 @@
+{
+	"events": [
+		{
+			"background": "res://resources/bg/timelines/intros/safety_signs_step_intro.jpg",
+			"event_id": "dialogic_021",
+			"fade_duration": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ну, и напоследок, надо взять знаки безопасности, а то мало ли какие люди бывают в наши дни. Зайдут куда ни попадя, а все шишки нам, если знаков не поставить."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Что тут у нас?"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1680598916.json",
+		"name": "signs_step"
+	}
+}

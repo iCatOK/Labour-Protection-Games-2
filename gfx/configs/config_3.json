@@ -1,5 +1,6 @@
 {
   "scenario_name": "Конфигурация 3 - Огонь",
+  "intro_timeline": "intro_v3",
   "first_step_valid_indexes": [1, 6, 10, 12, 15, 22, 27],
   "second_step_valid_indexes": [1, 2, 4, 5, 7, 9, 10, 11, 15],
   "sign_step_valid_indexes": [1, 4, 6, 7, 12],
