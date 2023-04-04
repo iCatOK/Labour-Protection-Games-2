@@ -7,6 +7,7 @@ onready var visual_novel_button = $"Content/Vertical Aligment/VisualNovelMode/Bu
 
 func _ready():
 	OS.set_window_maximized(true)
+	Global.is_visual_novel = true
 	set_visual_novel_button_text()
 
 func _unhandled_input(event):
