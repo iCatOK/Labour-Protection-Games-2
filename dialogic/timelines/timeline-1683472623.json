@@ -1,0 +1,282 @@
+{
+	"events": [
+		{
+			"definition": "1679329105-483",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "0"
+		},
+		{
+			"background": "res://resources/bg/timelines/emergency/v1/emergency_1.jpg",
+			"event_id": "dialogic_021"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Работник выполняет окрасочные работы и у него происходит разрыв маски."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Каковы ваши действия?"
+		},
+		{
+			"choice": "Снять СИЗ",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Работник получил отравление. Этап не пройден. Баллы: [Good Points]."
+		},
+		{
+			"emit_signal": "set_results",
+			"event_id": "dialogic_040"
+		},
+		{
+			"change_scene": "res://scenes/v1_work_on_high/TestStepVariantOne.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "Закрыть лицо рукой",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Работник получил отравление. Этап не пройден. Баллы: [Good Points]."
+		},
+		{
+			"emit_signal": "set_results",
+			"event_id": "dialogic_040"
+		},
+		{
+			"change_scene": "res://scenes/v1_work_on_high/TestStepVariantOne.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "Немедленно покинуть безопасную зону",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"definition": "1679329105-483",
+			"event_id": "dialogic_014",
+			"operation": "+",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Вы решаете прервать работы и довести своего коллегу до подсобки."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"background": "res://resources/bg/timelines/emergency/v1/emergency_2.jpg",
+			"event_id": "dialogic_021"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Вы благополучно дотащили своего коллегу до безопасного места."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Каковы ваши дальнейшие действия?"
+		},
+		{
+			"choice": "Вызвать пожарную бригаду",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Зачем? В данном действии нет необходимости. Этап не пройден. Баллы: [Good Points]."
+		},
+		{
+			"emit_signal": "set_results",
+			"event_id": "dialogic_040"
+		},
+		{
+			"change_scene": "res://scenes/v1_work_on_high/TestStepVariantOne.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "Заклеить маску",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Действие не может быть выполнено. Этап не пройден. Баллы: [Good Points]."
+		},
+		{
+			"emit_signal": "set_results",
+			"event_id": "dialogic_040"
+		},
+		{
+			"change_scene": "res://scenes/v1_work_on_high/TestStepVariantOne.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "Сообщить об этом непосредственному руководителю",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"definition": "1679329105-483",
+			"event_id": "dialogic_014",
+			"operation": "+",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Вы обращаетесь к непосредственному руководителю и объясняете ситуацию. Все сделано правильно!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Коллега в безопасности, начальство уведомлено. Что дальше?"
+		},
+		{
+			"choice": "Завершить окраску резервуара",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Вы еще не до конца покрасили резервуар. Этап не пройден. Баллы: [Good Points]."
+		},
+		{
+			"emit_signal": "set_results",
+			"event_id": "dialogic_040"
+		},
+		{
+			"change_scene": "res://scenes/v1_work_on_high/TestStepVariantOne.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "Продолжить работы по окраске резервуара",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Работы не могут быть возобновлены из-за неисправного оборудования (произошел разрыв маски)."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " Этап не пройден. Баллы: [Good Points]."
+		},
+		{
+			"emit_signal": "set_results",
+			"event_id": "dialogic_040"
+		},
+		{
+			"change_scene": "res://scenes/v1_work_on_high/TestStepVariantOne.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "Заменить средства индивидуальной защиты",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"definition": "1679329105-483",
+			"event_id": "dialogic_014",
+			"operation": "+",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "После смены СИЗ вы заканчиваете работу."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Всё было выполнено верно! Этап пройден. Баллы: [Good Points]."
+		},
+		{
+			"emit_signal": "set_results",
+			"event_id": "dialogic_040"
+		},
+		{
+			"change_scene": "res://scenes/v1_work_on_high/TestStepVariantOne.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1683472623.json",
+		"name": "emergency_work_on_high"
+	}
+}

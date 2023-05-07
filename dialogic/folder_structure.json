@@ -60,6 +60,18 @@
 					},
 					"metadata": {
 						"color": null,
+						"folded": true
+					}
+				},
+				"emergency": {
+					"files": [
+						"timeline-1683472623.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
 						"folded": false
 					}
 				}
