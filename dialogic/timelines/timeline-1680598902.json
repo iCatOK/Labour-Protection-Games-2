@@ -4,35 +4,13 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ничего не предвещало беды, но..."
-		},
-		{
-			"background": "res://resources/bg/timelines/intros/document_step_intro.jpg",
-			"event_id": "dialogic_021"
-		},
-		{
-			"character": "character-1679326700.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "О, новое письмо от босса."
+			"text": "Перед работой необходимо пройти 5 испытаний."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "После смены руководства планёрки полностью перешли в онлайн. С одной стороны хорошо, но сложностей прибавилось куча."
-		},
-		{
-			"character": "character-1679326700.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "И кто писал этот наряд допуск? Уже с первой строчки видна очепятка! Кого они наняли, чёрт бы их побрал?"
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Ну делать нечего, придётся исправлять."
+			"text": "Для начала заполни наряд-допуск в соответствии с письмом."
 		},
 		{
 			"event_id": "dialogic_022",

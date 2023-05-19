@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/common/TestStep.gd" type="Script" id=1]
 [ext_resource path="res://scenes/common/CommonLabel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/common/AnswerButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gfx/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/v1_work_on_high/TestStepTutorial.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 3 )
 
 [node name="TestStep" type="Control"]
 anchor_right = 1.0
@@ -19,54 +23,71 @@ color = Color( 0.215686, 0.215686, 0.352941, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 50.0
+margin_top = 100.0
 margin_right = -50.0
 custom_constants/separation = 30
 alignment = 1
 
 [node name="QuestionHeader" parent="TestElements" instance=ExtResource( 2 )]
-margin_top = 378.0
+margin_top = 353.0
 margin_right = 1820.0
-margin_bottom = 431.0
+margin_bottom = 406.0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-text = "Вопрос 1: Кто проживает на дне океана?"
+text = "К работам на высоте относятся работы, когда:"
 align = 1
 autowrap = true
 
 [node name="Separator" type="MarginContainer" parent="TestElements"]
-margin_top = 461.0
+margin_top = 436.0
 margin_right = 1820.0
-margin_bottom = 501.0
-rect_min_size = Vector2( 0, 40 )
+margin_bottom = 451.0
+rect_min_size = Vector2( 0, 15 )
 
 [node name="AnswersContainer" type="VBoxContainer" parent="TestElements"]
-margin_top = 531.0
+margin_top = 481.0
 margin_right = 1820.0
-margin_bottom = 531.0
+margin_bottom = 481.0
 custom_constants/separation = 30
 
 [node name="Separator2" type="MarginContainer" parent="TestElements"]
-margin_top = 561.0
+margin_top = 511.0
 margin_right = 1820.0
-margin_bottom = 601.0
-rect_min_size = Vector2( 0, 40 )
+margin_bottom = 526.0
+rect_min_size = Vector2( 0, 15 )
 
 [node name="NavigationButtons" type="HBoxContainer" parent="TestElements"]
-margin_top = 631.0
+margin_top = 556.0
 margin_right = 1820.0
-margin_bottom = 701.0
+margin_bottom = 626.0
 custom_constants/separation = 30
 alignment = 1
 
-[node name="NextButton" parent="TestElements/NavigationButtons" instance=ExtResource( 3 )]
+[node name="NextButton" type="MarginContainer" parent="TestElements/NavigationButtons"]
 margin_left = 810.0
 margin_right = 1010.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 200, 70 )
+size_flags_horizontal = 4
+
+[node name="Background" type="ColorRect" parent="TestElements/NavigationButtons/NextButton"]
+margin_right = 200.0
+margin_bottom = 70.0
+mouse_filter = 1
+color = Color( 0.164706, 0.164706, 0.262745, 1 )
+
+[node name="Label" type="Label" parent="TestElements/NavigationButtons/NextButton"]
+margin_top = 16.0
+margin_right = 200.0
+margin_bottom = 53.0
+mouse_filter = 1
+custom_fonts/font = SubResource( 1 )
 text = "Далее"
-script = null
+align = 1
+valign = 1
+autowrap = true
 
 [node name="Tutorial" parent="." instance=ExtResource( 4 )]
 visible = false
 
-[connection signal="pressed" from="TestElements/NavigationButtons/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="gui_input" from="TestElements/NavigationButtons/NextButton" to="." method="_on_NextButton_gui_input"]

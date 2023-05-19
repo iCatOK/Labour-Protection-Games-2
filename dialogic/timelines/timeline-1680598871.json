@@ -6,16 +6,26 @@
 			"fade_duration": 0
 		},
 		{
-			"character": "",
+			"character": "character-1679326700.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Я любил высоту с детства. Меня всегда тянуло бегать по крышам гаражей и домов, а забраться быстрее на деревья со всего двора не мог никто кроме меня. "
 		},
 		{
-			"character": "",
+			"character": "character-1679326700.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "С годами это стремление никуда не пропадало и вот сейчас я работаю в строительной компании, периодически вспоминая прошедшие деньки с теплотой в сердце."
+		},
+		{
+			"background": "res://resources/bg/timelines/intros/document_step_intro.jpg",
+			"event_id": "dialogic_021"
+		},
+		{
+			"character": "character-1679326700.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Сегодня нам предстоит выполнить окрасочные работы внешней стенки резервуара."
 		},
 		{
 			"change_timeline": "timeline-1680598902.json",

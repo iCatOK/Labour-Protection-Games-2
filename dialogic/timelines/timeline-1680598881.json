@@ -6,22 +6,32 @@
 			"fade_duration": 0
 		},
 		{
-			"character": "",
+			"character": "character-1679326700.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Я работаю сварщиком уже более 20 лет, и не думаю, что мне надоест заниматься этим до конца моей жизни.  "
 		},
 		{
-			"character": "",
+			"character": "character-1679326700.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Есть что-то удовлетворяющее в работе с металлом, резке, формовке, соединении отдельных деталей воедино. "
 		},
 		{
-			"character": "",
+			"character": "character-1679326700.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "В этой работе есть нечто творческое, но вместо кистей или музыкальных инструментов ты работаешь огнём и сталью."
+		},
+		{
+			"background": "res://resources/bg/timelines/intros/document_step_intro.jpg",
+			"event_id": "dialogic_021"
+		},
+		{
+			"character": "character-1679326700.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Сегодня нам предстоит выполнить огнеопасные работы."
 		},
 		{
 			"change_timeline": "timeline-1680598902.json",

@@ -1,10 +1,8 @@
-extends Button
+extends Control
 class_name AnswerButton
 
-var normal_button_style_box: StyleBox = preload("res://styles/color/button_color_normal.tres") as StyleBox
-var normal_button_hovered_style_box: StyleBox = preload("res://styles/color/button_color_normal_hovered.tres") as StyleBox
-var pressed_button_style_box: StyleBox = preload("res://styles/color/button_color_pressed.tres") as StyleBox
-var pressed_button_hovered_style_box: StyleBox = preload("res://styles/color/button_color_pressed_hovered.tres") as StyleBox
+export var pressed_color: Color = Color("2f9366")
+export var normal_color: Color = Color("2a2a43")
 
 var option_name: String = "Ответ на вопрос"
 var is_choosen: bool = false
@@ -15,7 +13,7 @@ var question_index: int = -1
 signal on_choose(button)
 
 func _ready():
-	text = option_name
+	$Label.text = option_name
 	
 func init(option_name, question_index, answer_index, is_correct):
 	self.option_name = "   " + option_name + "   "
@@ -31,10 +29,11 @@ func set_choosen(is_choosen):
 	update_button()
 	
 func update_button():
-	add_stylebox_override("normal", pressed_button_style_box if is_choosen else normal_button_style_box)
-	add_stylebox_override("hover", pressed_button_hovered_style_box if is_choosen else normal_button_hovered_style_box)
+	$Background.color = pressed_color if is_choosen else normal_color
 
-func _on_AnswerButton_pressed():
-	print("[answer button] Choosed answer #%s for question #%s" % [answer_index, question_index])
-	set_choosen(not is_choosen)
-	emit_signal("on_choose", self)
+
+func _on_AnswerButton_gui_input(event):
+	if event.is_action_pressed("ui_click"):
+		print("[answer button] Choosed answer #%s for question #%s" % [answer_index, question_index])
+		set_choosen(not is_choosen)
+		emit_signal("on_choose", self)
